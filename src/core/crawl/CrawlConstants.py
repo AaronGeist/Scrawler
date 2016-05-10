@@ -25,6 +25,7 @@ class CrawlConstants:
     # SUB_PAGE_IMG_CSS = 'a[href*="imagetwist"] > img[src*="imagetwist"]'
     BASE_URL = "http://www.guokr.com/"
     HOME_PAGE = BASE_URL + "group/31/"
+    LOGIN_PAGE = ""
     HOME_PAGE_BROWSER = "?page="
     TOP_PAGE_LINK_CSS = "ul#postList > li a.title-link"
     SUB_PAGE_IMG_CSS = "ul.cmts-list > li a > img"

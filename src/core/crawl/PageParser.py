@@ -28,7 +28,7 @@ class PageParser:
 
         try:
             page.url = subPageUrl
-            page.uniqueID = str(uuid.uuid4())
+            page.uniqueID = str(uuid.uuid5(uuid.NAMESPACE_URL, page.url))
             subPage = Utils.urlGet(subPageUrl)
 
             # imgList = Utils.getAttrList(subPage, 'img[src*="imgroom"]', CrawlConstants.ATTR_SRC)
