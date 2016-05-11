@@ -57,9 +57,9 @@ class Utils:
             return None
 
     @staticmethod
-    def urlPost(url, opener=None, data=None, returnRaw=False):
+    def urlPost(url, opener=None, data=None, headers=None, returnRaw=False):
         if (opener is None):
-            opener = Utils.createOpener()
+            opener = Utils.createOpener(headers)
 
         try:
             encodeData = urllib.parse.urlencode(data).encode("utf-8")
@@ -100,7 +100,9 @@ class Utils:
     def downloadImage(url, targetFilePath, headers=None):
         print("Downloading " + url)
         res = Utils.urlGet(url, returnRaw=True)
-        assert (res is not None)
+        if res is None:
+            print("ERROR: none content from: " + url)
+            return
 
         try:
             f = open(targetFilePath, "wb")

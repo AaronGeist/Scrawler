@@ -11,7 +11,7 @@ class PageLoader:
         print("Loading page " + page.url)
 
         # create folder for images
-        folder = os.path.join(Utils.rootPath(), CrawlConstants.IMAGE_FOLDER, page.uniqueID)
+        folder = os.path.join(Utils.rootPath(), CrawlConstants.FOLDER_IMAGE, page.uniqueID)
         Utils.createFolder(folder)
         return self.doLoad(page, folder)
 
